@@ -40,9 +40,13 @@ function clearRightDisplay() {
 const numArr = [];
 function buildMathArr(event) {
     let num = document.querySelector(`#calc-number-area`).innerText;
-    numArr.push(Number(num));
-    console.log(numArr);
-    
+    if (document.querySelector(`#calc-status-area`).innerText === `NEG`) {
+        numArr.push(Number(num - (num * 2)));
+        document.querySelector(`#calc-status-area`).innerText = ``;
+    } else {
+        numArr.push(Number(num));
+        console.log(numArr);
+    }
     document.querySelector(`#calc-number-area`).innerText = `0`;
 }
 
