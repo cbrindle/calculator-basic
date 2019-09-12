@@ -58,7 +58,7 @@ body {
     overflow-x: hidden;
 }
 
-.operator {
+.operator, .equals {
     background-color: rgb(209, 193, 45)
 }
 
