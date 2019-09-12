@@ -1,5 +1,6 @@
 #app {
     box-sizing: border-box;
+    display: flex;
 }
 
 body {
@@ -13,6 +14,8 @@ body {
     justify-content: center;
     height: 100vh;
     width: 75vw;
+    background-image: linear-gradient(to top right, white, rgb(78, 245, 245));
+    border-right: 2px solid black;
 }
 
 #calculator-main {
@@ -21,12 +24,15 @@ body {
     width: 40%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: rgb(240, 240, 240);
 }
 
 #calc-display {
     display: flex;
     grid-area: 1 / 1 / span 1 / span 4;
-    border: 1px solid gray;
+    border: 6px double gray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #calc-row1 {
@@ -38,6 +44,8 @@ body {
 
 .row-style {
     display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
 }
 
@@ -55,6 +63,10 @@ body {
 
 .row1-4 {
     grid-area: 1 / 4 / span 1 / span 1;
+}
+
+.row1-1-0 {
+    grid-area: 1 / 1 / span 1 / span 2;
 }
 
 #calc-row2 {
@@ -89,4 +101,16 @@ body {
     display: grid;
     height: 100vh;
     width: 25vw;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+}
+
+#right-main-top {
+    display: grid;
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+#right-main-bottom {
+    display: grid;
+    grid-area: span 2 / 1 / span 1 / span 1;
 }
