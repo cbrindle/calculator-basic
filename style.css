@@ -35,6 +35,18 @@ body {
     border-top-right-radius: 5px;
 }
 
+.operator {
+    background-color: rgb(209, 193, 45)
+}
+
+.func {
+    background-color: rgb(78, 78, 78)
+}
+
+.num-color {
+    background-color: rgb(105, 105, 117)
+}
+
 #calc-row1 {
     display: grid;
     grid-area: 2 / 1 / span 1 / span 4;
@@ -47,6 +59,10 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 .row1-1 {
@@ -106,8 +122,16 @@ body {
 }
 
 #right-main-top {
-    display: grid;
+    display: flex;
     grid-area: 1 / 1 / span 1 / span 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-clear {
+    height: 50px;
+    width: 200px;
+    background-color: red;
 }
 
 #right-main-bottom {
