@@ -30,6 +30,8 @@ p {
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
     background-color: rgb(240, 240, 240);
     border: 5px outset rgb(175, 174, 174);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #calc-number-area {

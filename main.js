@@ -1,4 +1,5 @@
 //Start up and initializing operations
+//////////////////////////////////////
 function giveEventNums() {
     //
     //Allows number buttons to display
@@ -23,6 +24,7 @@ giveEventNums();
 
 
 //Calculator button functionality
+/////////////////////////////////
 function calcNumButton(event) {
     pressNum = event.target;
     if (document.querySelector(`#calc-number-area`).innerText === `0`) {
@@ -65,13 +67,14 @@ function percentage() {
 function clearRightDisplay() {
     debugger;
     const list = document.querySelector(`#equation-display`);
-    for (let i = document.querySelector(`#equation-display`).childNodes.length; i > 3; i--) {
+    for (let i = (list.childNodes.length) - 1; i > 0; i--) {
         list.removeChild(list.childNodes[i]);
     }
 }
 
 
 //Math functionality
+////////////////////
 let numArr = [];
 function buildMathArr(event) {
     let num = document.querySelector(`#calc-number-area`).innerText;
