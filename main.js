@@ -65,7 +65,6 @@ function percentage() {
 }
 
 function clearRightDisplay() {
-    debugger;
     const list = document.querySelector(`#equation-display`);
     for (let i = (list.childNodes.length) - 1; i > 0; i--) {
         list.removeChild(list.childNodes[i]);
@@ -89,9 +88,9 @@ function buildMathArr(event) {
         numArr.push(`+`);
     } else if (event.target.innerText === `-`) {
         numArr.push(`-`);
-    } else if (event.target.childNodes[1].classList.contains(`multiply`)) {
+    } else if (event.target.classList.contains(`multiply`)) {
         numArr.push(`*`);
-    } else if (event.target.childNodes[1].classList.contains(`divide`)) {
+    } else if (event.target.classList.contains(`divide`)) {
         numArr.push(`/`);
     }
     console.log(numArr);
@@ -100,6 +99,9 @@ function buildMathArr(event) {
 
 function equals() {
     let num = Number(document.querySelector(`#calc-number-area`).innerText);
+    if (numArr.length === 0) {
+        return
+    }
     if (document.querySelector(`#calc-status-area`).innerText === `NEG`) {
         num = Number(num - (num * 2));
         numArr.push(num);
@@ -118,6 +120,9 @@ function equals() {
     let displayArr = ``;
     for (let i of numArr) {
         displayArr += i + ` `;
+    }
+    if (isNaN(answer)) {
+        answer = `0`
     }
     displayArr += ` = ` + answer;
     newLi.innerText = displayArr;
