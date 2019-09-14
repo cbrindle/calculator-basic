@@ -12,26 +12,35 @@ p {
 }
 
 #left-main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     justify-content: center;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 40% 60%;
     height: 100vh;
     width: 75vw;
     background-image: linear-gradient(to top right, white, rgb(78, 245, 245));
     border-right: 2px solid black;
 }
 
+#formulas {
+    display: grid;
+    grid-area: 2 / 1 / span 1 / span 1;
+    height: 100%;
+}
+
 #calculator-main {
     display: grid;
-    height: 75%;
-    width: 40%;
+    grid-area: 2 / 2 / span 1 / span 1;
+    height: 100%;
+    width: 75%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
     background-color: rgb(240, 240, 240);
     border: 5px outset rgb(175, 174, 174);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    margin-left: 10%;
 }
 
 #calc-number-area {
