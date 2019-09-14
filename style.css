@@ -25,7 +25,7 @@ p {
 
 #formulas {
     display: grid;
-    grid-area: 2 / 1 / span 1 / span 1;
+    grid-area: 1 / 1 / span 3 / span 1;
     height: 100%;
 }
 
@@ -40,7 +40,7 @@ p {
     border: 5px outset rgb(175, 174, 174);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 
 #calc-number-area {
@@ -181,4 +181,9 @@ p {
 #right-main-bottom {
     display: grid;
     grid-area: span 2 / 1 / span 1 / span 1;
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 1.3em;
 }

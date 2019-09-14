@@ -99,7 +99,14 @@ function buildMathArr(event) {
 }
 
 function equals() {
-    numArr.push(document.querySelector(`#calc-number-area`).innerText);
+    let num = Number(document.querySelector(`#calc-number-area`).innerText);
+    if (document.querySelector(`#calc-status-area`).innerText === `NEG`) {
+        num = Number(num - (num * 2));
+        numArr.push(num);
+    } else {
+        numArr.push(document.querySelector(`#calc-number-area`).innerText);
+    }
+    document.querySelector(`#calc-status-area`).innerText = ``;
     let answer = 0;
     const evalArr = numArr.join('');
     answer = eval(evalArr);
