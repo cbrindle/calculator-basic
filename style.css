@@ -149,6 +149,8 @@ p {
     width: 25vw;
     grid-template-columns: 100%;
     grid-template-rows: 20% 80%;
+    background-image: url(./images/sheldon1-edit.jpg);
+    background-size: cover;
 }
 
 #right-main-top {
