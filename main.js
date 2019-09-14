@@ -17,7 +17,6 @@ function giveEventNums() {
     const ops = document.querySelectorAll(`.operator`);
     ops.forEach(function(item) {
         item.onclick = buildMathArr;
-        // item.onclick = pushOperator;
     });
 }
 giveEventNums();
@@ -95,5 +94,14 @@ function equals() {
     
     //
     //Display equation in right-main-bottom div
-    const listArea = document.querySelector(`#right-main-bottom`);
+    const listArea = document.querySelector(`#right-main-bottom ul`);
+    const newLi = document.createElement(`li`);
+    let displayArr = ``;
+    for (let i of numArr) {
+        displayArr += i + ` `;
+    }
+    displayArr += ` = ` + answer;
+    newLi.innerText = displayArr;
+    listArea.appendChild(newLi);
+    numArr = [];
 }
