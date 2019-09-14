@@ -29,6 +29,7 @@ p {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
     background-color: rgb(240, 240, 240);
+    border: 5px outset rgb(175, 174, 174);
 }
 
 #calc-number-area {
@@ -159,6 +160,9 @@ p {
     height: 50px;
     width: 200px;
     background-color: red;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
 }
 
 #right-main-bottom {
