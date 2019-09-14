@@ -56,6 +56,12 @@ function allClear() {
     }
 }
 
+function percentage() {
+    let check = Number(document.querySelector(`#calc-number-area`).innerText);
+    check = check / 100;
+    document.querySelector(`#calc-number-area`).innerText = check;
+}
+
 function clearRightDisplay() {
     debugger;
     const list = document.querySelector(`#equation-display`);
