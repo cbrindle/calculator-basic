@@ -29,6 +29,11 @@ function calcNumButton(event) {
         document.querySelector(`#calc-number-area`).innerText = ``;
     }
     document.querySelector(`#calc-number-area`).innerText += pressNum.innerText;
+    if (Number(document.querySelector(`#calc-number-area`).innerText) > 0) {
+        document.querySelector(`.acButton`).innerText = `C`;
+    } else {
+        document.querySelector(`.acButton`).innerText = `AC`;
+    }
 }
 
 function posNeg() {
@@ -40,13 +45,28 @@ function posNeg() {
     }
 }
 
+function allClear() {
+    let check = document.querySelector(`.acButton`).innerText;
+    if (check === `AC`) {
+        numArr = [];
+        document.querySelector(`#calc-number-area`).innerText = `0`;
+    } else if (check === `C`) {
+        document.querySelector(`#calc-number-area`).innerText = `0`;
+        document.querySelector(`.acButton`).innerText = `AC`;
+    }
+}
+
 function clearRightDisplay() {
-    document.querySelector(`#right-main-bottom`).innerText = ``;
+    debugger;
+    const list = document.querySelector(`#equation-display`);
+    for (let i = document.querySelector(`#equation-display`).childNodes.length; i > 3; i--) {
+        list.removeChild(list.childNodes[i]);
+    }
 }
 
 
 //Math functionality
-const numArr = [];
+let numArr = [];
 function buildMathArr(event) {
     let num = document.querySelector(`#calc-number-area`).innerText;
     if (document.querySelector(`#calc-status-area`).innerText === `NEG`) {
@@ -66,24 +86,7 @@ function buildMathArr(event) {
         numArr.push(`/`);
     }
     console.log(numArr);
-    document.querySelector(`#calc-number-area`).innerText = `0`;
-}
-
-function doMath(numArr) {
-    let result = 0;
-
-}
-
-function pushOperator(event) {
-    if (event.target.innerText === `+`) {
-        numArr.push(`+`);
-    } else if (event.target.innerText === `-`) {
-        numArr.push(`-`);
-    } else if (event.target.classList.contains(`multiply`)) {
-        numArr.push(`*`);
-    } else if (event.target.innerText.classList.contains(`divide`)) {
-        nurArr.push(`/`);
-    }
+    document.querySelector(`#calc-number-area`).innerText = `0`
 }
 
 function equals() {
@@ -104,4 +107,6 @@ function equals() {
     newLi.innerText = displayArr;
     listArea.appendChild(newLi);
     numArr = [];
+    document.querySelector(`#calc-number-area`).innerText = `0`;
+    document.querySelector(`.acButton`).innerText = `AC`;
 }

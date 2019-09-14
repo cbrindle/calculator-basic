@@ -20,7 +20,7 @@
                     </div>
                     <div id="calc-row1">
                         <!-- AC, +/-, %, / -->
-                        <div class="row1-1 row-style func">
+                        <div onclick="allClear()" class="row1-1 row-style func acButton">
                             AC
                         </div>
                         <div class="row1-2 row-style func pos-neg-button">
@@ -110,7 +110,7 @@
                     <button onclick="clearRightDisplay()" id="clear-text" class="button button-clear">CLEAR</button>
                 </div>
                 <div id="right-main-bottom">
-                    <ul>
+                    <ul id="equation-display">
                         <!-- Calculation display dynamically created -->
                     </ul>
                 </div>
