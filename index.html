@@ -30,7 +30,7 @@
                             %
                         </div>
                         <div class="row1-4 row-style operator">
-                            &divide;
+                            <p class="divide">&divide;</p>
                         </div>
                     </div>
 
@@ -48,7 +48,8 @@
                             9
                         </div>
                         <div class="row1-4 row-style operator">
-                            &times;
+                            <p class="multiply">&times;</p>
+                            
                         </div>
                     </div>
 
@@ -98,7 +99,7 @@
                         <div class="row1-3 row-style num-color char-show">
                             .
                         </div>
-                        <div class="row1-4 row-style equals">
+                        <div onclick='equals()' class="row1-4 row-style equals">
                             =
                         </div>
                     </div>
@@ -109,11 +110,15 @@
                     <button onclick="clearRightDisplay()" id="clear-text" class="button button-clear">CLEAR</button>
                 </div>
                 <div id="right-main-bottom">
-                    <!-- Display number readouts -->
+                    <ul>
+                        <!-- Calculation display dynamically created -->
+                    </ul>
                 </div>
             </div>
         </div>
         
-        <script src="./main.js"></script>
+        <script src="./main.js">
+        const times = times
+        </script>
     </body>
 </html>

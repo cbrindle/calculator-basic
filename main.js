@@ -1,13 +1,23 @@
 //Start up and initializing operations
 function giveEventNums() {
+    //
+    //Allows number buttons to display
+    
     let items = document.querySelectorAll(`.char-show`);
     items.forEach(function(item) {
         item.onclick = calcNumButton;
     });
+
+    //
+    //Displays "NEG" in the status are to indicate a negative number
     document.querySelector(`.pos-neg-button`).onclick = posNeg;
+
+    //
+    //Constructs an array of number and operators to evaluate
     const ops = document.querySelectorAll(`.operator`);
     ops.forEach(function(item) {
-        item.onclick = buildMathArr
+        item.onclick = buildMathArr;
+        // item.onclick = pushOperator;
     });
 }
 giveEventNums();
@@ -45,8 +55,18 @@ function buildMathArr(event) {
         document.querySelector(`#calc-status-area`).innerText = ``;
     } else {
         numArr.push(Number(num));
-        console.log(numArr);
     }
+    console.log(event.target);
+    if (event.target.innerText === `+`) {
+        numArr.push(`+`);
+    } else if (event.target.innerText === `-`) {
+        numArr.push(`-`);
+    } else if (event.target.childNodes[1].classList.contains(`multiply`)) {
+        numArr.push(`*`);
+    } else if (event.target.childNodes[1].classList.contains(`divide`)) {
+        numArr.push(`/`);
+    }
+    console.log(numArr);
     document.querySelector(`#calc-number-area`).innerText = `0`;
 }
 
@@ -55,18 +75,25 @@ function doMath(numArr) {
 
 }
 
-function add() {
+function pushOperator(event) {
+    if (event.target.innerText === `+`) {
+        numArr.push(`+`);
+    } else if (event.target.innerText === `-`) {
+        numArr.push(`-`);
+    } else if (event.target.classList.contains(`multiply`)) {
+        numArr.push(`*`);
+    } else if (event.target.innerText.classList.contains(`divide`)) {
+        nurArr.push(`/`);
+    }
+}
+
+function equals() {
+    numArr.push(document.querySelector(`#calc-number-area`).innerText);
+    let answer = 0;
+    const evalArr = numArr.join('');
+    answer = eval(evalArr);
     
-}
-
-function subtract() {
-
-}
-
-function multiply() {
-
-}
-
-function divide() {
-
+    //
+    //Display equation in right-main-bottom div
+    const listArea = document.querySelector(`#right-main-bottom`);
 }
