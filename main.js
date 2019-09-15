@@ -1,9 +1,7 @@
-//Calculator button functionality//
-///////////////////////////////////
+//Add Event listener to allow for number key press functionality
 document.addEventListener(`keydown`, typeNum);
 
 function typeNum(event) {
-    console.log(event.code);
     const nums = {
                     Digit1: `1`,
                     Digit2: `2`,
@@ -32,7 +30,10 @@ function typeNum(event) {
         equals();
     }
 }
+//////////
 
+
+//Clicking number button will make it display on calculator
 function calcNumButton(event) {
     pressNum = event.target;
     if (document.querySelector(`#calc-number-area`).innerText === `0`) {
@@ -66,18 +67,24 @@ function allClear() {
     }
 }
 
+
 function percentage() {
     let check = Number(document.querySelector(`#calc-number-area`).innerText);
     check = check / 100;
     document.querySelector(`#calc-number-area`).innerText = check;
 }
+//////////
 
+
+
+//Clicking the red clear button clears out the equations on the right side
 function clearRightDisplay() {
     const list = document.querySelector(`#equation-display`);
     for (let i = (list.childNodes.length) - 1; i > 0; i--) {
         list.removeChild(list.childNodes[i]);
     }
 }
+
 
 
 //Math functionality//
