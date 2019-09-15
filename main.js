@@ -28,7 +28,7 @@ function typeNum(event) {
             document.querySelector(`.acButton`).innerText = `AC`;
         }
     }
-    if (event.code === `Enter`) {
+    if (event.code === `Enter` || event.code === `Equal`) {
         equals();
     }
 }
