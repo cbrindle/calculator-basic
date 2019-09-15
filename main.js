@@ -3,6 +3,7 @@
 document.addEventListener(`keydown`, typeNum);
 
 function typeNum(event) {
+    console.log(event.code);
     const nums = {
                     Digit1: `1`,
                     Digit2: `2`,
@@ -14,6 +15,7 @@ function typeNum(event) {
                     Digit8: `8`,
                     Digit9: `9`,
                     Digit0: `0`,
+                    Period: `.`,
                 }
     if (event.code in nums) {
         if (document.querySelector(`#calc-number-area`).innerText === `0`) {
@@ -25,6 +27,9 @@ function typeNum(event) {
         } else {
             document.querySelector(`.acButton`).innerText = `AC`;
         }
+    }
+    if (event.code === `Enter`) {
+        equals();
     }
 }
 
